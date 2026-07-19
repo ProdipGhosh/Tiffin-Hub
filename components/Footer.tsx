@@ -2,6 +2,7 @@
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/constants";
 import { Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -20,8 +21,15 @@ const socials = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
+
   const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (pathname !== "/") {
+      router.push("/" + href);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -118,7 +126,7 @@ export default function Footer() {
               DigitalIndian
             </a>
           </p>
-          {/* <p>
+          <p>
             <a
               href="/privacy-policy"
               className="text-stone-400 hover:text-orange-400 transition-colors"
@@ -126,7 +134,7 @@ export default function Footer() {
               Privacy Policy
             </a>
           </p>
-          <p>
+          {/* <p>
             <a
               href="/terms-of-service"
               className="text-stone-400 hover:text-orange-400 transition-colors"

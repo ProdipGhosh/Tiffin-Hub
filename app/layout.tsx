@@ -111,12 +111,6 @@ export const metadata: Metadata = {
     },
   },
   colorScheme: "light dark",
- archives: `${SITE_URL}/archives`,
- assets: `${SITE_URL}/assets`,
- bookmarks: `${SITE_URL}/bookmarks`,
-  category: "Food & Drink",
-  classification: "Tiffin Service",
-  distribution: "Global",
   generator: "Next.js",
   robots: {
     index: true,
@@ -131,14 +125,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  facebook: {
-    appId: "1234567890",
-  },
-  keywords: [
-    "tiffin service",
-    "food delivery",
-    "homemade meals",
-  ],
   itunes: {
     appId: "1234567890",
   },
@@ -147,44 +133,7 @@ export const metadata: Metadata = {
     "msapplication-TileImage": "/mstile-144x144.png",
     "msapplication-config": "/browserconfig.xml",
   },
-  publisher: "Digital Indian",
-  rating: "General",
   referrer: "no-referrer",
-  search: {
-    title: "Tiffin Hub Search",
-    action: `${SITE_URL}/search`,
-    method: "get",
-    inputName: "q",
-  },
-  themeColor: "#ffffff",
-  verification: {
-    google: "u0EKq_k_B3sLqsJwe7FXapVXCr6YFz7G9Yy1hn2oWcc",
-    yandex: "1234567890abcdef",
-  },
-  pagination: {
-    next: `${SITE_URL}/page/2`,
-    previous: `${SITE_URL}/page/1`,
-  },
-  bookmarks: `${SITE_URL}/bookmarks`,
-  archives: `${SITE_URL}/archives`,
-  assets: `${SITE_URL}/assets`,
-  category: "Food & Drink",
-  classification: "Tiffin Service",
-  distribution: "Global",
-  generator: "Next.js",
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
@@ -209,27 +158,6 @@ export const metadata: Metadata = {
     title: "Tiffin Hub",
     description: "Homemade meals delivered daily. Order now!",
   },
-  keywords: [
-  openGraph: {
-    title: "Tiffin Hub — Fresh Homemade Meals Delivered Daily",
-    description:
-      "Healthy, affordable tiffin service in Bhatpara & surrounding areas. From ₹69.",
-    url: SITE_URL,
-    siteName: "Tiffin Hub",
-    locale: "en_IN",
-    type: "website",
-    ttl: 3600,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tiffin Hub",
-    description: "Homemade meals delivered daily. Order now!",
-  },
-  icons: {
-    icon: "/icon.png",
-
-  },
-
 };
 
 export default function RootLayout({

@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ShoppingBag, UserCheck } from "lucide-react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Menu", href: "#menu" },
@@ -17,10 +19,13 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
+      if (pathname !== "/") return;
       const sections = navLinks.map((l) => l.href.slice(1));
       for (const s of sections.reverse()) {
         const el = document.getElementById(s);
@@ -32,11 +37,15 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   const handleNav = (href: string) => {
     setOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (pathname !== "/") {
+      router.push("/" + href);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
