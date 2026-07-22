@@ -4,13 +4,11 @@ import { Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
-const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Menu", href: "#menu" },
-  { label: "Why Us", href: "#features" },
-  { label: "Order", href: "#order" },
-  { label: "Contact", href: "#contact" },
+const learnMoreLinks = [
+  { label: "Privacy Policy", href: "/policy/privacy-policy" },
+  { label: "Cancellation Policy", href: "/policy/cancellation-policy" },
+  { label: "Refund Policy", href: "/policy/refund-policy" },
+  { label: "Terms of Use", href: "/policy/terms-of-use" },
 ];
 
 const socials = [
@@ -67,26 +65,29 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Learn More links */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Learn More</h4>
             <ul className="space-y-2.5">
-              {quickLinks.map((l) => (
+              {learnMoreLinks.map((l) => (
                 <li key={l.label}>
-                  <button
-                    onClick={() => scrollTo(l.href)}
+                  <a
+                    href={l.href}
                     className="text-stone-400 hover:text-orange-400 transition-colors text-sm"
                   >
                     {l.label}
-                  </button>
+                  </a>
                 </li>
               ))}
-              <li>
-                <a href="/partner" className="text-pink-400 hover:text-pink-300 transition-colors text-sm font-medium">
-                  👩‍🍳 Become a Food Partner
-                </a>
-              </li>
             </ul>
+            <div className="mt-4 pt-3 border-t border-stone-800">
+              <a
+                href="/partner#apply"
+                className="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors text-sm font-semibold"
+              >
+                👩‍🍳 Become a Food Partner
+              </a>
+            </div>
           </div>
 
           {/* Contact */}
@@ -128,7 +129,7 @@ export default function Footer() {
           </p>
           <p>
             <a
-              href="/privacy-policy"
+              href="/policy/privacy-policy"
               className="text-stone-400 hover:text-orange-400 transition-colors"
             >
               Privacy Policy

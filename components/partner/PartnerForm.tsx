@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, MessageCircle, CheckCircle, X } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/constants";
 
@@ -102,6 +102,15 @@ export default function PartnerForm() {
   const [form, setForm] = useState<PartnerFormData>(defaultForm);
   const [errors, setErrors] = useState<Partial<PartnerFormData>>({});
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#apply") {
+      const timer = setTimeout(() => {
+        document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const set = (k: keyof PartnerFormData, v: string) =>
     setForm((f) => ({ ...f, [k]: v }));

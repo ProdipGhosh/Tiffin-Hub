@@ -85,7 +85,7 @@ export default function Navbar() {
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="/partner"
+              href="/partner#apply"
               className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 shadow-md shadow-orange-200 hover:shadow-orange-300 hover:scale-105"
             >
               <UserCheck size={16} />
@@ -119,7 +119,7 @@ export default function Navbar() {
               </button>
             ))}
             <a
-              href="/partner"
+              href="/partner#apply"
               className="w-full flex items-center justify-center gap-2 mt-2 bg-orange-500 text-white py-3 rounded-xl font-semibold text-sm"
             >
               < UserCheck size={16} />  Become a Food Partner
