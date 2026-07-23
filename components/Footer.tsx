@@ -117,7 +117,7 @@ export default function Footer() {
         <div className="border-t border-stone-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-500">
           <p>© {new Date().getFullYear()} Tiffin Hub. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Made  <span className="text-red-400">♥</span> by{" "}
+            Made  <span className="text-red-400"></span> by{" "}
             <a
               href="https://digitalindian.co.in"
               target="_blank"

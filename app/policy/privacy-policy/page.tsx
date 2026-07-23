@@ -22,7 +22,6 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans flex flex-col">
-
       {/* ── Top Navbar ── */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="w-full px-4 h-14 flex items-center justify-between gap-4">
