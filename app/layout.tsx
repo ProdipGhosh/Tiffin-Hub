@@ -1,6 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SITE_URL, CONTACT_INFO } from "@/constants";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  colorScheme: "light dark",
+};
 
 export const metadata: Metadata = {
   title: "Tiffin Hub — Fresh Homemade Meals Delivered Daily",
@@ -90,15 +101,6 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
   manifest: `${SITE_URL}/manifest.json`,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   formatDetection: {
     email: false,
     address: false,
@@ -110,7 +112,6 @@ export const metadata: Metadata = {
       url: SITE_URL,
     },
   },
-  colorScheme: "light dark",
   generator: "Next.js",
   robots: {
     index: true,

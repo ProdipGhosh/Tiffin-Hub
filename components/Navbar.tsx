@@ -83,7 +83,13 @@ export default function Navbar() {
           </div>
 
           {/* CTA + mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <a
+              href="/rider"
+              className="hidden md:flex items-center gap-2 border border-stone-400/40 hover:border-orange-400 text-stone-600 hover:text-orange-600 hover:bg-orange-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:scale-105"
+            >
+              🛵 Delivery Partner
+            </a>
             <a
               href="/partner#apply"
               className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 shadow-md shadow-orange-200 hover:shadow-orange-300 hover:scale-105"
@@ -119,10 +125,16 @@ export default function Navbar() {
               </button>
             ))}
             <a
+              href="/rider"
+              className="w-full flex items-center justify-center gap-2 mt-2 border border-stone-300 text-stone-700 hover:bg-orange-50 hover:text-orange-600 py-3 rounded-xl font-semibold text-sm transition-colors"
+            >
+              🛵 Become a Delivery Partner
+            </a>
+            <a
               href="/partner#apply"
               className="w-full flex items-center justify-center gap-2 mt-2 bg-orange-500 text-white py-3 rounded-xl font-semibold text-sm"
             >
-              < UserCheck size={16} />  Become a Food Partner
+              <UserCheck size={16} />  Become a Food Partner
             </a>
           </div>
         </div>
